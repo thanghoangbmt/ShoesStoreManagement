@@ -1,0 +1,51 @@
+.container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.shoe-detail-right .divider {
+    height: 2px;
+    background-color: #fff;
+    background: url(../images/bg_divider.png) repeat-x 7px;
+}
+
+.shoe-detail-right h6 {
+    font-size: 16px;
+}
+
+.saleprice {
+    color: #f15e2c;
+    font-size: 30px;
+}
+
+.btn-black {
+    background-color: #000000;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.text-orange {
+    color: #f15e2c;
+}
+
+.entry-menu {
+    list-style: none;
+    border-bottom: #000 3px solid;
+    padding: 0.5rem 1rem 0.5rem 0;
+    display: block;
+}
+
+.entry-menu>li+li:before {
+    content: "| ";
+}
+
+.entry-menu li {
+    display: inline-block;
+}
+
+.entry-menu li a {
+    color: black;
+}
+
+.entry-menu li.active {
+    font-weight: bold;
+}
