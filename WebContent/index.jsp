@@ -6,13 +6,13 @@
 	<meta charset="ISO-8859-1">
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../Css/index_duy.css">
+    <link rel="stylesheet" type="text/css" href="../Css/style_duy.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/png" href="../Image/SHOES_store.png">
     <title>Shoes Store</title>
 </head>
 <body>
-	 <!-- checkbox on-off -->
+	 <!-- ===== checkbox on-off ==== -->
     <input type="checkbox" id="menu">
     <!-- =============Thanh search=============== -->
     <nav>
