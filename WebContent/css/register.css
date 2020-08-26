@@ -1,0 +1,38 @@
+body {
+    /* background-color: #eee; */
+}
+
+*[role="form"] {
+    max-width: 630px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #eee;
+    border-radius: 0.3em;
+}
+
+label span{
+    color: red;
+}
+.social-btn{
+    font-weight: 100;
+    color:white;
+}
+.facebook-btn{  background-color:#3C589C; }
+.google-btn{ background-color: #DF4B3B; }
+.facebook-btn{
+    margin-right: auto;
+}
+.dotted {
+    border: 1.5px solid white;
+    width: 80%;
+   margin: 0 auto;
+}
+.checkbox{
+    text-align: center;
+}
+.social-btn{
+}
+.to{
+   position: relative;
+   left: 5em;
+}
