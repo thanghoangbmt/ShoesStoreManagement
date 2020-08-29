@@ -1,0 +1,537 @@
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;0,700;1,200&display=swap');
+:root {
+    --fontFam: 'Montserrat', sans-serif;
+    --colorBlk: rgb(175, 51, 10);
+    --color_hover: rgba(175, 51, 10, 0.418);
+    /* rgb(4, 80, 80); */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+/* ========================= */
+
+nav {
+    background-image: linear-gradient(to top, #fff, rgb(235, 225, 225, 0.9));
+    line-height: 80px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* ========== */
+
+.logo {
+    width: 20%;
+    padding-top: 10px;
+    padding-left: 75px;
+}
+
+.logo-ima {
+    width: 150px;
+    height: 70px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ========== */
+
+.nav-function {
+    width: 60%;
+}
+
+.nav-function ul .nav-func-item {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.nav-function ul .nav-func-item a {
+    color: var(--colorBlk);
+    font-family: var(--fontFam);
+}
+
+.nav-function ul .nav-func-item a i {
+    margin-right: 10px;
+}
+
+
+/*====btn-search====*/
+
+.search {
+    position: relative;
+    width: 100%;
+    line-height: 80px;
+    display: inline-block;
+}
+
+.search input {
+    width: 500px;
+    height: 35px;
+    border: 1px solid var(--colorBlk);
+    outline: none;
+    padding-left: 30px;
+    border-radius: 5px;
+    color: var(--colorBlk);
+    font-family: var(--fontFam);
+    font-size: 18px;
+    background: none;
+    transition: 0.3s;
+}
+
+.btn-search {
+    position: absolute;
+    top: 0px;
+    left: 8px;
+}
+
+
+/* ========== */
+
+.log-in-out {
+    width: 20%;
+}
+
+.log-in-out ul .log-item {
+    display: inline-block;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.log-in-out ul .log-item a {
+    color: var(--colorBlk);
+    font-family: var(--fontFam);
+    background-color: var(--color_hover);
+    width: 100px;
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.log-in-out ul .log-item a:hover {
+    background-color: rgba(175, 51, 10, 0.582);
+}
+
+.log-in-out ul .log-item a:active {
+    transform: translateY(-8px);
+}
+
+.log-in-out ul .in a {
+    padding: 5px 18px;
+}
+
+.log-in-out ul .in a:active {
+    transform: translateY(-8px);
+}
+
+.log-in-out ul .log-item a i {
+    margin-right: 10px;
+}
+
+label {
+    line-height: 80px;
+    font-size: 30px;
+    color: var(--colorBlk);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+
+/* ========================Side-menu trái================= */
+
+.side-menu {
+    position: fixed;
+    /* background-image: linear-gradient(to bottom, #fff, rgb(235, 225, 225)); */
+    background: linear-gradient(0deg, rgba(235, 225, 225, 1) 13%, rgba(255, 255, 255, 1) 100%);
+    float: left;
+    width: 20%;
+    height: 100%;
+    margin-top: 84px;
+}
+
+.side-menu .info {
+    text-align: center;
+}
+
+.side-menu .info img {
+    height: 130px;
+    width: 110px;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 3px solid var(--colorBlk);
+    padding: 5px;
+}
+
+.side-menu a {
+    display: block;
+    line-height: 60px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    border-top: 1px solid #fff;
+}
+
+.side-menu a:hover {
+    background: var(--color_hover);
+    padding-left: 15px;
+}
+
+.side-menu span {
+    font-size: 18px;
+    margin-left: 10px;
+    color: var(--colorBlk);
+    font-family: var(--fontFam);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.side-menu i {
+    font-size: 20px;
+    margin-left: 20px;
+    color: var(--colorBlk);
+}
+
+nav .menu-bar {
+    float: right;
+    margin-top: 20px;
+    display: none;
+    margin-right: 20px;
+}
+
+#menu {
+    display: none;
+}
+
+.side-menu .Logout {
+    display: none;
+}
+
+#menu:checked~.side-menu {
+    left: 0;
+}
+
+
+/* ========================== data-container======================= */
+
+.data {
+    float: right;
+    height: auto;
+    width: 80%;
+    margin-left: 250px;
+    margin-top: 85px;
+}
+
+.data p {
+    margin: 100px 20px;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.slide-img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.maindiv {
+    width: 90%;
+    height: 450px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-image: url(../Image/banner_shoes1.jpg);
+    background-size: 100% 100%;
+    box-shadow: 1px 2px 10px 3px rgba(167, 160, 160, 0.39);
+    animation: slider 15s infinite linear;
+}
+
+.opacity-color {
+    background-color: rgba(4, 80, 80, 0.336);
+    opacity: 1.9;
+}
+
+@keyframes slider {
+    0% {
+        background-image: url(../Image/banner_shoes2.jpg);
+        background-size: 100% 100%;
+    }
+    35% {
+        background-image: url(../Image/banner_shoes3.jpg);
+        background-size: 100% 100%;
+    }
+    75% {
+        background-image: url(../Image/banner_shoes4.jpg);
+        background-size: 100% 100%;
+    }
+    100% {
+        background-image: url(../Image/banner_shoes2.jpg);
+        background-size: 100% 100%;
+    }
+}
+
+
+/* ===============Cards============= */
+
+.main-show {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-shoes {
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    flex-flow: wrap;
+}
+
+.show-shoes {
+    width: 27%;
+    height: 350px;
+    margin-top: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    -webkit-box-shadow: 4px 16px 41px -16px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 16px 41px -16px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px 16px 41px -16px rgba(0, 0, 0, 0.75);
+}
+
+.bgr-card {
+    height: 320px;
+    background-color: rgba(235, 225, 225);
+    border-radius: 5px 5px 30% 30%;
+}
+
+.heart {
+    width: 100%;
+    float: right;
+}
+
+.heart i {
+    font-size: 30px;
+    float: right;
+    margin: 5px;
+}
+
+.ima-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ima {
+    width: 75%;
+    height: 220px;
+    background-color: indigo;
+    border-radius: 5px 5px 30% 30%;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.bgr-card a {
+    color: var(--colorBlk);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--fontFam);
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.show-price {
+    background-color: var(--color_hover);
+    width: 53%;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.show-price ul {
+    text-align: center;
+    line-height: 25px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+
+/* =========================RESPONSIVE========================== */
+
+
+/* ========================PC===================== */
+
+@media (max-width:1335px) {
+    .log-in-out .log-item a i {
+        display: none;
+    }
+    .search input {
+        width: 250px;
+        transition: 0.3s;
+    }
+    .logo {
+        padding-left: 55px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width:1080px) {
+    .nav-function {
+        width: 55%;
+    }
+    .log-in-out {
+        width: 25%;
+        padding-left: 10px;
+    }
+    .maindiv {
+        width: 95%;
+    }
+    .show-shoes {
+        width: 45%;
+    }
+    .logo {
+        padding-left: 40px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width:999px) {
+    .search input {
+        width: 200px;
+        transition: 0.3s;
+    }
+    .logo-ima {
+        width: 110px;
+        height: 50px;
+        transition: 0.5s;
+    }
+    .logo {
+        padding-top: 15px;
+        padding-left: 30px;
+        transition: 0.5s;
+    }
+}
+
+
+/* ========================tablet======================== */
+
+@media (max-width:935px) {
+    .side-menu a span {
+        display: none;
+    }
+    .logo {
+        padding-left: 20px;
+        transition: 0.5s;
+    }
+    .side-menu .info {
+        display: none;
+    }
+    .side-menu {
+        width: 10%;
+    }
+    .side-menu a i {
+        display: block;
+        line-height: 80px;
+        text-align: center;
+        margin-left: 0;
+        font-size: 35px;
+    }
+    .data {
+        width: 90%;
+    }
+    .search input {
+        display: none;
+        transition: 0.3s linear;
+    }
+    .search .btn-search {
+        display: none;
+    }
+}
+
+@media (max-width:910px) {
+    .nav-function {
+        width: 45%;
+    }
+    .log-in-out {
+        width: 35%;
+        padding-left: 35px;
+    }
+    .logo label {
+        margin-left: 10px;
+        font-size: 20px;
+        transition: 0.5s;
+    }
+}
+
+
+/* =======================mobile======================= */
+
+@media (max-width:710px) {
+    .data {
+        display: block;
+        padding-left: 0;
+        margin-right: 30px;
+        width: 90%;
+    }
+    .slide-img .maindiv {
+        height: 350px;
+    }
+    .row-shoes {
+        display: flex;
+        flex-direction: row;
+    }
+    .show-shoes {
+        width: 55%;
+        height: 400px;
+    }
+    .bgr-card {
+        height: 350px;
+    }
+    nav ul {
+        display: none;
+    }
+    .side-menu {
+        width: 100%;
+        text-align: center;
+        left: 100%;
+        background-color: #4c516d;
+        transition: all 0.5s;
+    }
+    .side-menu a i {
+        display: none;
+    }
+    .side-menu a span {
+        display: block;
+    }
+    .side-menu .Logout {
+        display: block;
+    }
+    nav .menu-bar {
+        display: block;
+    }
+}
