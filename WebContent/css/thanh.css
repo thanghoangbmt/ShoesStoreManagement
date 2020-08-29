@@ -1,0 +1,383 @@
+body{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.thanh{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.thanh img{
+    vertical-align: middle;
+    border: 0;
+}
+
+.title-thanh{
+     color: black;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 30px;
+     margin: 10px 0px 40px 0px;
+     text-align: center;
+     text-transform: uppercase;
+}
+
+.infor-bar-thanh{
+    padding-left: 0px;
+}
+
+.item-thanh{
+    /* padding-left: 0px; */
+    margin-left: -10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.infor-bar-thanh .left-thanh{
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    color: #808080;
+
+}
+
+.line-1-thanh{
+    border-bottom: #000 2px solid;
+    height: 1px;
+    margin: 10px 0px 20px 0px;
+}
+
+.block-product-thanh .item-thanh .media-left-thanh a{
+    display: block;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    /* padding-left: 20px; */
+}
+
+.block-product-thanh .item-thanh .media-object-thanh{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.media-thanh {
+    overflow: hidden;
+    
+}
+
+.media-left-thanh {
+    padding-right: 20px;
+}
+
+.media-left-thanh, .media-right-thanh, .media-body-thanh {display: table-cell;vertical-align: top;}
+
+
+.media-body-thanh {
+    width: 10000px;
+    overflow: hidden;
+}
+
+h4.media-heading-thanh {
+    color: #000;
+    font-size: 21px;
+    margin-bottom: 0px;
+    min-height: 50px;
+}
+
+h5.price-thanh {
+    color: #808080;
+    margin-top: 10px;
+}
+
+span.saleoff {
+    font-size: 16px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.form-group-thanh {
+    width: 100px;
+    margin-bottom: 0px;
+}
+
+.row.bottom-thanh {
+    position: absolute;
+    bottom: 0px;
+}
+
+.select-thanh{
+    width: 64px;
+}
+
+.item-1-thanh{
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+    text-align: right;
+}
+
+.price {
+    color: #f15e2c;
+    font-size: 23px;
+    margin-bottom: 0px;
+    min-height: 50px;
+}
+
+.status {
+    color: #f15e2c;
+    font-size: 16px;
+}
+
+.btn-thanh{
+    display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 0px;
+}
+
+.btn-left , .btn-right{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.col-xs-6.col-sm-6.col-md-6.col-lg-6.btn-end {
+    margin: 40px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+button.btn.btn-delall {
+    border-radius: 0px;
+    height: 40px;
+    width: 240px;
+    border: none;
+    background-color: #303030;
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-ctnsp{
+    float: right;
+}
+
+.main-cart {
+    max-width: 1200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.main-cart-left {
+    padding-right: 40px;
+}
+.title-1-1-thanh {
+    color: #000;
+    background-color: #f1f1f1;
+    font-size: 23px;
+    margin: 0px 0px 20px 0px;
+    padding: 5px 20px 5px 20px;
+}
+
+.main-cart-left .form-group {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.has-feedback {
+    position: relative;
+}
+
+form.orderForm {
+    width: 100%;
+}
+
+.ck1 {
+    position: relative;
+    font-size: 16px;
+    color: #000;
+}
+
+.main-cart-right .list-group-item.title-thanh {
+    color: #000;
+    font-size: 23px;
+}
+
+.main-cart-right .list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    margin-bottom: -1px;
+    background-color: transparent;
+    border: none;
+    clear: both;
+    overflow: hidden;
+}
+
+.main-cart-right .list-group-item.line2-thanh {
+    border-bottom: #000 2px solid;
+    margin: 0px 20px;
+    padding: 0px;
+}
+
+.main-cart-right .list-group-item.text-1-thanh {padding-top: 20px;padding-bottom: 5px;}
+
+.main-cart-right .list-group-item.text-1-1-thanh {
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+span.title-6-thanh {
+    width: 60%;
+    float: left;
+    color: #808080;
+    font-size: 16px;
+}
+
+span.title-6-1-thanh {
+    width: 40%;
+    float: right;
+    color: #808080;
+    font-size: 16px;
+    text-align: right;
+}
+
+span.title-6-2-thanh {
+    width: 60%;
+    float: left;
+    color: #808080;
+    font-size: 16px;
+}
+
+span.title-6-3-thanh {
+    width: 20%;
+    float: left;
+    color: #808080;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* .main-cart-right .list-group-item.line2-thanh {
+    background-color: #fff;
+    background: url(../images/bg_divider.png) repeat-x 7px; 
+    height: 2px;
+    margin: 5px 20px;
+} */
+
+span.title-3-1-thanh {
+    color: #808080;
+    font-size: 16px;
+    float: right;
+}
+
+span.title-3-thanh {
+    color: #808080;
+    font-size: 16px;
+    float: left;
+}
+
+.main-cart-right .list-group-item.text-2-2-thanh {
+    padding-top: 0px;
+    color: #000;
+}
+
+span.title-4-1-thanh, span.title-22 {
+    color: #808080;
+    font-size: 16px;
+    float: right;
+}
+
+.main-cart-right .list-group-item.text-2-3-thanh {
+    padding: 0px 20px 20px 20px;
+}
+
+.main-cart-right .title-21-thanh {
+    color: #000000;
+    float: left;
+    font-size: 16px;
+}
+
+.main-cart-right .title-5 {
+    color: #000;
+    font-size: 18px;
+    margin-top: 5px;
+    float: left;
+}
+
+.main-cart-right .title-5-2 {
+    float: right;
+    color: #f15e2c;
+    font-size: 21px;
+}
+
+button.btn.btn-cart.btn-complete-detail {
+    border-radius: 0px;
+    background-color: #f15e2c;
+    color: #fff;
+    font-size: 23px;
+    height: 80px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-complete-detail a {
+    color: white;
+}
+
+.main-cart-right .list-group-item{
+    background-color: #f1f1f1;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}
+
+.item-notice-thanh{
+    border: #f8b29a 1px solid;
+    margin: 20px 0px 0px 0px;
+    font-family: NunitoSanSBoldI;
+    font-size: 16px;
+    color: #f15e2c;
+    background-color: #ffebe6;
+    padding: 6px 12px;
+    text-align: center;
+}
+
+.thanh a{
+    text-decoration: none;
+}
+
+/* comment */
+.main-cart-right .list-group-item .form-control {
+    display: block;
+    /* width: 100%; */
+    height: 40px;
+    line-height: 1.4;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    color: #000;
+    font-size: 16px;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.btn-apply-thanh {
+    border-radius: 0px;
+    background-color: #f15e2c;
+    color: #fff;
+    font-size: 18px;
+    height: 40px;
+}
+
+.col-xs-6-thanh{
+    width: 50%;
+}
+
+.h5-thanh{
+    font-size: 1rem !important;
+}
