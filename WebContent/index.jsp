@@ -6,9 +6,9 @@
 	<meta charset="ISO-8859-1">
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../Css/style_duy.css">
+    <link rel="stylesheet" type="text/css" href="css/style_duy.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" type="image/png" href="../Image/SHOES_store.png">
+    <link rel="shortcut icon" type="image/png" href="images/SHOES_store.png">
     <title>Shoes Store</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <nav>
         <div class="logo">
             <div class="logo-ima">
-                <img src="../Image/SHOES_store.png" alt="">
+                <img src="images/SHOES_store.png" alt="">
             </div>
         </div>
         <div class="nav-function">
@@ -56,7 +56,7 @@
     <!-- <div class="contain"> -->
     <div class="side-menu">
         <div class="info">
-            <img src="../Image/Logo_Ananas_Header.png">
+            <img src="images/Logo_Ananas_Header.png">
         </div>
         <br>
         <a href="#"><i class="fa fa-user"></i><span>Home</span></a>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="ima-center">
                             <div class="ima">
-                                <a href=""><img src="../Image/pro_urbas_A61060_1.jpg" alt=""></a>
+                                <a href=""><img src="images/pro_urbas_A61060_1.jpg" alt=""></a>
                             </div>
                         </div>
                         <a href="">Vintas Earth - Low Top</a>
@@ -106,7 +106,7 @@
                         </div>
                         <div class="ima-center">
                             <div class="ima">
-                                <a href=""><img src="../Image/pro_urbas_A61060_1.jpg" alt=""></a>
+                                <a href=""><img src="images/pro_urbas_A61060_1.jpg" alt=""></a>
                             </div>
                         </div>
                         <a href="">Vintas Earth - Low Top</a>
@@ -126,7 +126,7 @@
                         </div>
                         <div class="ima-center">
                             <div class="ima">
-                                <a href=""><img src="../Image/pro_urbas_A61060_1.jpg" alt=""></a>
+                                <a href=""><img src="images/pro_urbas_A61060_1.jpg" alt=""></a>
                             </div>
                         </div>
                         <a href="">Vintas Earth - Low Top</a>
@@ -148,7 +148,7 @@
                         </div>
                         <div class="ima-center">
                             <div class="ima">
-                                <a href=""><img src="../Image/pro_urbas_A61060_1.jpg" alt=""></a>
+                                <a href=""><img src="images/pro_urbas_A61060_1.jpg" alt=""></a>
                             </div>
                         </div>
                         <a href="">Vintas Earth - Low Top</a>
@@ -168,7 +168,7 @@
                         </div>
                         <div class="ima-center">
                             <div class="ima">
-                                <a href=""><img src="../Image/pro_urbas_A61060_1.jpg" alt=""></a>
+                                <a href=""><img src="images/pro_urbas_A61060_1.jpg" alt=""></a>
                             </div>
                         </div>
                         <a href="">Vintas Earth - Low Top</a>
@@ -188,7 +188,7 @@
                         </div>
                         <div class="ima-center">
                             <div class="ima">
-                                <a href=""><img src="../Image/pro_urbas_A61060_1.jpg" alt=""></a>
+                                <a href=""><img src="images/pro_urbas_A61060_1.jpg" alt=""></a>
                             </div>
                         </div>
                         <a href="">Vintas Earth - Low Top</a>

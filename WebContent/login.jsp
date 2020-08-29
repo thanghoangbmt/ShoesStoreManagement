@@ -57,7 +57,7 @@
 			<a href="#" id="forgot_pswd" class="pt-2">Forgot password?</a>
 			<hr>
 			<!-- <p>Don't have an account!</p>  -->
-			<a class="btn btn-primary btn-block text-white" id="btn-signup"><i
+			<a class="btn btn-primary btn-block text-white" id="btn-signup" href="register.jsp"><i
 				class="fas fa-user-plus"></i> Sign up New Account</a>
 		</form>
 		<br>
