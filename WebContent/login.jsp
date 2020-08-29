@@ -1,64 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Bootstrap 4 Login/Register Form</title>
-    <link rel="stylesheet" href="css/login.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>Login Page</title>
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <p style="text-align:center"></p>
-    <div id="logreg-forms">
-        <form class="form-signin">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-            <div class="social-login">
-                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
-            </div>
-            <p style="text-align:center"> OR  </p>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-            
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
-            <a href="#" id="forgot_pswd">Forgot password?</a>
-            <hr>
-            <!-- <p>Don't have an account!</p>  -->
-            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
-            </form>
+	<div id="logreg-forms">
+		<form action="LoginController" class="form-signin" method="POST">
+			<h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Sign
+				in</h1>
+			<div class="social-login">
 
-            <form action="/reset/password/" class="form-reset">
-                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
-                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
-            </form>
-            
-            <form action="/signup/" class="form-signup">
-                <div class="social-login">
-                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
-                </div>
-                <div class="social-login">
-                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
-                </div>
-                
-                <p style="text-align:center">OR</p>
+				<c:url var="facebookLoginLink"
+					value="https://www.facebook.com/dialog/oauth">
+					<c:param name="scope" value="email"></c:param>
+					<c:param name="redirect_uri"
+						value="http://localhost:8080/ShoesStoreManagement/FacebookLoginController"></c:param>
+					<c:param name="client_id" value="798224377662570"></c:param>
+				</c:url>
+				<a class="btn facebook-btn social-btn d-inline-block" href="${facebookLoginLink}">
+					<span><i class="fab fa-facebook-f"></i> Sign in with
+						Facebook</span>
+				</a>
 
-                <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
-                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
-                <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-                <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+				<c:url var="googleLoginLink"
+					value="https://accounts.google.com/o/oauth2/auth">
+					<c:param name="scope" value="email profile"></c:param>
+					<c:param name="redirect_uri"
+						value="http://localhost:8080/ShoesStoreManagement/GoogleLoginController"></c:param>
+					<c:param name="response_type" value="code"></c:param>
+					<c:param name="client_id"
+						value="636020098503-in0rvu06sde1bcicvbvh4s5m12rv7slt.apps.googleusercontent.com"></c:param>
+					<c:param name="approval_prompt" value="force"></c:param>
+				</c:url>
+				<a class="btn google-btn social-btn d-inline-block"
+					href="${googleLoginLink}"><span><i
+						class="fab fa-google-plus-g"></i> Sign in with Google+</span> </a>
+			</div>
+			<p style="text-align: center">OR</p>
+			<input type="email" id="inputEmail" class="form-control"
+				placeholder="Email address" name="txtEmail"> <input
+				type="password" id="inputPassword" class="form-control"
+				placeholder="Password" name="txtPassword"> <input
+				type="submit" id="inputPassword"
+				class="btn btn-success btn-block mt-2" name="action" value="Sign In">
 
-                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
-                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
-            </form>
-            <br>
-            
-    </div>
-    <script src="js/all.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
+
+			<a href="#" id="forgot_pswd" class="pt-2">Forgot password?</a>
+			<hr>
+			<!-- <p>Don't have an account!</p>  -->
+			<a class="btn btn-primary btn-block text-white" id="btn-signup"><i
+				class="fas fa-user-plus"></i> Sign up New Account</a>
+		</form>
+		<br>
+
+	</div>
+	<script src="js/all.js"></script>
+	<script src="js/jquery-3.5.1.min.js"></script>
 </body>
 </html>
