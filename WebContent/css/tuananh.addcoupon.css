@@ -1,0 +1,14 @@
+    .cus01 {
+        margin: 0 auto;
+        margin-top: 2rem;
+        padding: 2rem 5rem;
+    }
+
+    .text-link {
+        text-decoration: none !important;
+    }
+
+    .cus02 {
+        background-color: #e8e8e8;
+        padding: 1rem;
+    }
