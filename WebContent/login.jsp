@@ -26,9 +26,9 @@
 						value="http://localhost:8080/ShoesStoreManagement/FacebookLoginController"></c:param>
 					<c:param name="client_id" value="798224377662570"></c:param>
 				</c:url>
-				<a class="btn facebook-btn social-btn d-inline-block" href="${facebookLoginLink}">
-					<span><i class="fab fa-facebook-f"></i> Sign in with
-						Facebook</span>
+				<a class="btn facebook-btn social-btn d-inline-block"
+					href="${facebookLoginLink}"> <span><i
+						class="fab fa-facebook-f"></i> Sign in with Facebook</span>
 				</a>
 
 				<c:url var="googleLoginLink"
@@ -53,12 +53,16 @@
 				type="submit" id="inputPassword"
 				class="btn btn-success btn-block mt-2" name="action" value="Sign In">
 
-
-			<a href="#" id="forgot_pswd" class="pt-2">Forgot password?</a>
+			<div class="mt-2">
+				<a href="#" id="forgot_pswd" class="float-left">Forgot password?</a>
+				<a href="home.jsp" class="float-right text-warning">Back To Home</a>
+			</div>
+			<div class="clearfix"></div>
 			<hr>
 			<!-- <p>Don't have an account!</p>  -->
-			<a class="btn btn-primary btn-block text-white" id="btn-signup" href="register.jsp"><i
-				class="fas fa-user-plus"></i> Sign up New Account</a>
+			<a class="btn btn-primary btn-block text-white" id="btn-signup"
+				href="register.jsp"><i class="fas fa-user-plus"></i> Sign up New
+				Account</a>
 		</form>
 		<br>
 
