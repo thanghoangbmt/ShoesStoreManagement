@@ -21,9 +21,9 @@ import sample.socialaccess.GoogleUtils;
 public class GoogleLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private final String ADMIN = "home.jsp";
-    private final String STAFF = "home.jsp";
-    private final String CUSTOMER = "home.jsp";
+	private final String ADMIN = "index.jsp";
+    private final String STAFF = "index.jsp";
+    private final String CUSTOMER = "index.jsp";
     private final String ERROR = "login.jsp";
        
     /**

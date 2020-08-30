@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style_duy.css">
@@ -59,14 +58,14 @@
             <img src="images/Logo_Ananas_Header.png">
         </div>
         <br>
-        <a href="#"><i class="fa fa-user"></i><span>Home</span></a>
-        <a href="#"><i class="fa fa-envelope"></i><span>Service</span></a>
-        <a href="#"><i class="fa fa-shopping-basket"></i><span>Hot Trend</span></a>
-        <a href="#"><i class="fa fa-sellsy"></i><span>About Us</span></a>
-        <a href="#"><i class="fa fa-ban"></i><span>Contact</span></a>
-        <a href="#"><i class="fa fa-cog"></i><span>Setting</span></a>
-        <a href="#" class="Logout"><span>Login</span></a>
-        <a href="#" class="Logout"><span>Logout</span></a>
+        <a href="#" class="nav-menu-link"><i class="fa fa-user"></i><span>Home</span></a>
+        <a href="#" class="nav-menu-link"><i class="fa fa-envelope"></i><span>Service</span></a>
+        <a href="#" class="nav-menu-link"><i class="fa fa-shopping-basket"></i><span>Hot Trend</span></a>
+        <a href="#" class="nav-menu-link"><i class="fa fa-sellsy"></i><span>About Us</span></a>
+        <a href="#" class="nav-menu-link"><i class="fa fa-ban"></i><span>Contact</span></a>
+        <a href="#" class="nav-menu-link"><i class="fa fa-cog"></i><span>Setting</span></a>
+        <a href="#" class="Logout nav-menu-link"><span>Login</span></a>
+        <a href="#" class="Logout nav-menu-link"><span>Logout</span></a>
     </div>
     <!-- ================Content=============== -->
     <div class="data">

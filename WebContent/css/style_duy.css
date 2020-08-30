@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;0,700;1,200&display=swap');
 :root {
     --fontFam: 'Montserrat', sans-serif;
-    --colorBlk: rgb(175, 51, 10);
+    /*--colorBlk: rgb(175, 51, 10);
     --color_hover: rgba(175, 51, 10, 0.418);
-    /* rgb(4, 80, 80); */
+    rgb(4, 80, 80); */
 }
 
 * {
@@ -158,8 +158,8 @@ label {
 
 .side-menu {
     position: fixed;
-    /* background-image: linear-gradient(to bottom, #fff, rgb(235, 225, 225)); */
-    background: linear-gradient(0deg, rgba(235, 225, 225, 1) 13%, rgba(255, 255, 255, 1) 100%);
+    /* background-image: linear-gradient(to bottom, #fff, rgb(235, 225, 225));
+    background: linear-gradient(0deg, rgba(235, 225, 225, 1) 13%, rgba(255, 255, 255, 1) 100%); */
     float: left;
     width: 20%;
     height: 100%;
@@ -323,7 +323,7 @@ h1 {
 
 .bgr-card {
     height: 320px;
-    background-color: rgba(235, 225, 225);
+    /* background-color: rgba(235, 225, 225); */
     border-radius: 5px 5px 30% 30%;
 }
 
@@ -378,6 +378,15 @@ img {
     line-height: 25px;
     text-transform: uppercase;
     font-weight: normal;
+}
+
+.nav-menu-link {
+	text-decoration: none;
+	color: black;
+}
+
+.nav-menu-link span {
+	color: black;
 }
 
 
