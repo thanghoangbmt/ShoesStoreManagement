@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 private final String LOGIN_CONTROLLER = "LoginController";
+private final String LOGOUT = "LogoutController";
 private final String REGISTER_CONTROLLER = "RegisterController";
 private final String VERIFICATION = "VerificationController";
 	
@@ -40,6 +41,8 @@ private final String VERIFICATION = "VerificationController";
 			String action = request.getParameter("action");
 			if (action.equals("Sign In")) {
 				url = LOGIN_CONTROLLER;
+			} else if (action.equals("Logout")) {
+				url = LOGOUT;
 			} else if (action.equals("Sign Up")) {
 				url = REGISTER_CONTROLLER;
 			} else if (action.equals("Verify")) {

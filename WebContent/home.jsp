@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,14 +30,15 @@
 								alt="Logo" class="w-100"></a>
 						</div>
 					</div>
-					
+
 					<div class="text-center">
 						<c:if test="${sessionScope.USER != null}">
 							<c:if test="${not empty sessionScope.USER}">
-								<h5 class="text-dark">Welcome ${sessionScope.USER.fullname}!</h5>
+								<h5 class="text-dark">Welcome
+									${sessionScope.USER.fullname}!</h5>
 							</c:if>
 						</c:if>
-						
+
 					</div>
 					<ul class="list-unstyled components">
 						<li class="active"><a href="#"><i class="fas fa-home"></i><span
@@ -56,8 +57,31 @@
 							</ul></li>
 						<li><a href="#"><i class="fas fa-heart"></i><span
 								class="ml-2">Favorite List</span></a></li>
-						<li><a href="login.jsp"><i class="fas fa-sign-in-alt"></i><span
-								class="ml-2">Login</span></a></li>
+						<c:if test="${sessionScope.USER != null}">
+							<c:if test="${not empty sessionScope.USER}">
+								<c:url var="logoutLink" value="MainController">
+								<c:param name="action" value="Logout"></c:param>
+							</c:url>
+								<li>
+									<a href="${logoutLink}">
+										<i class="fas fa-sign-in-alt"></i>
+										<span class="ml-2">Logout</span>
+									</a>
+								</li>
+							</c:if>
+						</c:if>
+						
+						<c:if test="${sessionScope.USER == null}">
+							<c:if test="${empty sessionScope.USER}">
+								<li>
+									<a href="login.jsp">
+										<i class="fas fa-sign-in-alt"></i>
+										<span class="ml-2">Login</span>
+									</a>
+								</li>
+							</c:if>
+						</c:if>
+						
 
 					</ul>
 				</nav>
@@ -66,13 +90,13 @@
 			<div class="col-md-9 pl-md-0">
 				<!-- Page Content  -->
 				<div id="content" class="pl-md-0">
-				
+
 					<form action="">
 						<div class="d-flex justify-content-end h-100">
 							<div class="searchbar">
 								<input class="search_input" type="text" name="txtSearch"
-									placeholder="Search..."> 
-									<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+									placeholder="Search..."> <a href="#"
+									class="search_icon"><i class="fas fa-search"></i></a>
 							</div>
 						</div>
 					</form>
