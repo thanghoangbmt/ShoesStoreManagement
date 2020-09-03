@@ -71,6 +71,7 @@
     background-color: #DF4B3B;
 }
 
+<<<<<<< HEAD
 #logreg-forms .form-reset,
 #logreg-forms .form-signup {
     display: none;
@@ -79,6 +80,9 @@
 #logreg-forms .form-signup .social-btn {
     width: 210px;
 }
+=======
+#logreg-forms .form-signup .social-btn{ width:210px; }
+>>>>>>> login
 
 #logreg-forms .form-signup input {
     margin-bottom: 2px;

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,12 @@
 					</div>
 					
 					<div class="text-center">
-						<h5 class="text-dark">Welcome Thắng Hoàng!</h5>
+						<c:if test="${sessionScope.USER != null}">
+							<c:if test="${not empty sessionScope.USER}">
+								<h5 class="text-dark">Welcome ${sessionScope.USER.fullname}!</h5>
+							</c:if>
+						</c:if>
+						
 					</div>
 					<ul class="list-unstyled components">
 						<li class="active"><a href="#"><i class="fas fa-home"></i><span
