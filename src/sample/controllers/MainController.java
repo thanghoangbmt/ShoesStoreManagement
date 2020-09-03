@@ -15,6 +15,7 @@ public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 private final String LOGIN_CONTROLLER = "LoginController";
 private final String REGISTER_CONTROLLER = "RegisterController";
+private final String VERIFICATION = "VerificationController";
 	
 	private final String ERROR = "login.jsp";
 	
@@ -33,13 +34,16 @@ private final String REGISTER_CONTROLLER = "RegisterController";
 
 	private void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String url = ERROR;
 		try {
 			String action = request.getParameter("action");
 			if (action.equals("Sign In")) {
 				url = LOGIN_CONTROLLER;
-			} else if (action.equals("Sign Un")) {
+			} else if (action.equals("Sign Up")) {
 				url = REGISTER_CONTROLLER;
+			} else if (action.equals("Verify")) {
+				url = VERIFICATION;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -18,7 +18,8 @@ import sample.dtos.AccountDTO;
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private final String ERROR = "login.jsp";
+    private final String SUCCESS = "CreateVerificationCodeController";
+    private final String ERROR = "register.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -44,14 +45,36 @@ public class RegisterController extends HttpServlet {
 	
 	private void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String url = ERROR;
 		boolean result = false;
 		try {
 			String email = request.getParameter("txtEmail");
 			String password = request.getParameter("txtPassword");
+			String phoneNumber = request.getParameter("txtPhoneNumber");
+			String fullname = request.getParameter("txtFullname");
+			String address = request.getParameter("txtAddress");
 			AccountBO bo = new AccountBO();
-			System.out.println(email);
+			
+            if (bo.checkExistEmail(email)) {
+            	request.setAttribute("REGISTER_ERROR", "Email has been registered!");
+                return;
+            }
+            
+            if (bo.checkExistPhone(phoneNumber)) {
+            	request.setAttribute("REGISTER_ERROR", "Phone number has been registered!");
+                return;
+            }
 
+            AccountDTO dto = new AccountDTO(email, password, phoneNumber, fullname, address);
+            
+            result = bo.registerUser(dto);
+            if (result) {
+                HttpSession session = request.getSession();
+                session.setAttribute("REGISTER_USER", dto);
+                url = SUCCESS;
+            }
+            
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

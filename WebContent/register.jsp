@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,20 +50,20 @@
 			</div>
 
 			<p style="text-align: center">OR</p>
-
+			
+			<input type="email" id="txtEmail" class="form-control"
+				placeholder="Email address" name="txtEmail">
+			<input type="password" id="txtPassword" class="form-control"
+				placeholder="Password" name="txtPassword"> 
+			<input type="password" id="txtConfirmPassword" class="form-control"
+				placeholder="Confirm Password" name="txtConfirmPassword">
+			<input type="text" id="txtPhoneNumber" class="form-control"
+				placeholder="Phone number" name="txtPhoneNumber"> 
 			<input type="text" id="txtFullname" class="form-control"
-				placeholder="Full name" name="txtFullname"> <input
-				type="email" id="txtEmail" class="form-control"
-				placeholder="Email address" name="txtEmail"> <input
-				type="text" id="txtPhoneNumber" class="form-control"
-				placeholder="Phone number" name="txtPhoneNumber"> <input
-				type="password" id="txtPassword" class="form-control"
-				placeholder="Password" name="txtPassword"> <input
-				type="password" id="txtConfirmPassword" class="form-control"
-				placeholder="Confirm Password" name="txtConfirmPassword"> <input
-				type="text" id="txtAddress" class="form-control"
+				placeholder="Full name" name="txtFullname"> 
+			<input type="text" id="txtAddress" class="form-control"
 				placeholder="Address" name="txtAddress">
-
+			<span class="text-danger">${requestScope.REGISTER_ERROR}</span>
 
 			<button class="btn btn-primary btn-block" type="button"
 				id="btnSignUp">
@@ -193,7 +192,7 @@
 
 		function isValidEmail(str) {
 			var result = false;
-			const patt = /^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gm;
+			const patt = /^[a-z][a-z0-9_\.]+@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/gm;
 			if (patt.test(str)) {
 				return true;
 			}

@@ -1,5 +1,6 @@
 package sample.daos;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import javax.naming.NamingException;
 
 import sample.dtos.AccountDTO;
 import sample.utils.DBUtils;
+import sample.utils.Utils;
 
 public class AccountDAO {
 	private Connection conn;
@@ -29,7 +31,7 @@ public class AccountDAO {
 		}
 	}
 
-	public AccountDTO checkLogin(String email, String password) throws ClassNotFoundException, SQLException {
+	public AccountDTO checkLogin(String email, String password) throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NullPointerException {
 		AccountDTO result = null;
 		try {
 			conn = DBUtils.getConnection();
@@ -38,7 +40,8 @@ public class AccountDAO {
 						+ "WHERE Email = ? AND Password = ? " + "AND a.RoleID = r.ID AND a.Status = ?";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, email);
-				ps.setString(2, password);
+				String encryptedPassword = Utils.encriptPasswordBySHA256(password);
+				ps.setString(2, encryptedPassword);
 				ps.setString(3, "Active");
 				rs = ps.executeQuery();
 				if (rs.next()) {
@@ -132,6 +135,68 @@ public class AccountDAO {
                 ps.setString(2, dto.getFullname());
                 ps.setInt(3, 3);
                 ps.setString(4, "Active");
+                result = (ps.executeUpdate() > 0);
+            }
+        } finally {
+            closeConnection();
+        }
+        return result;
+	}
+	
+	public boolean registerUser2(AccountDTO dto) throws ClassNotFoundException, SQLException, NoSuchAlgorithmException, NullPointerException {
+		boolean result = false;
+        try {
+            conn = DBUtils.getConnection();
+            if (conn != null) {
+                String sql = "INSERT INTO Accounts(Email, Password, PhoneNumber, Fullname, "
+                		+ "AddressDetails, RoleID, Status) "
+                		+ "VALUES(?,?,?,?,?,?,?)";
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, dto.getEmail());
+                String encryptedPassword = Utils.encriptPasswordBySHA256(dto.getPassword());
+                ps.setString(2, encryptedPassword);
+                ps.setString(3, dto.getPhoneNumber());
+                ps.setString(4, dto.getFullname());
+                ps.setString(5, dto.getAddressDetails());
+                ps.setInt(6, 3);
+                ps.setString(7, "New");
+                result = (ps.executeUpdate() > 0);
+            }
+        } finally {
+            closeConnection();
+        }
+        return result;
+	}
+
+	public boolean checkExistPhone(String phoneNumber) throws ClassNotFoundException, SQLException {
+		boolean result = false;
+        try {
+            conn = DBUtils.getConnection();
+            if (conn != null) {
+                String sql = "SELECT RoleID FROM Accounts WHERE PhoneNumber = ?";
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, phoneNumber);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    result = true;
+                }
+            }
+        } finally {
+            closeConnection();
+        }
+        return result;
+	}
+
+	public boolean activeAccount(AccountDTO dto) throws ClassNotFoundException, SQLException {
+		boolean result = false;
+        try {
+            conn = DBUtils.getConnection();
+            if (conn != null) {
+                String sql = "UPDATE Accounts SET Status = ? "
+                        + "WHERE Email = ?";
+                ps = conn.prepareStatement(sql);
+                ps.setString(1, "Active");
+                ps.setString(2, dto.getEmail());
                 result = (ps.executeUpdate() > 0);
             }
         } finally {
