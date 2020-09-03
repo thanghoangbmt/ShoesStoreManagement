@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/MainController")
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-private final String LOGINCONTROLLER = "LoginController";
+private final String LOGIN_CONTROLLER = "LoginController";
+private final String REGISTER_CONTROLLER = "RegisterController";
 	
 	private final String ERROR = "login.jsp";
 	
@@ -36,7 +37,9 @@ private final String LOGINCONTROLLER = "LoginController";
 		try {
 			String action = request.getParameter("action");
 			if (action.equals("Sign In")) {
-				url = LOGINCONTROLLER;
+				url = LOGIN_CONTROLLER;
+			} else if (action.equals("Sign Un")) {
+				url = REGISTER_CONTROLLER;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

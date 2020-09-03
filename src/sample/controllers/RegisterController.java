@@ -50,8 +50,7 @@ public class RegisterController extends HttpServlet {
 			String email = request.getParameter("txtEmail");
 			String password = request.getParameter("txtPassword");
 			AccountBO bo = new AccountBO();
-			AccountDTO dto = bo.checkLogin(email, password);
-			
+			System.out.println(email);
 
 		} catch (Exception e) {
 			e.printStackTrace();
