@@ -16,6 +16,7 @@
 	<div id="logreg-forms">
 		<form action="MainController" class="form-reset" id="formVerification" method="POST">
 			<input type="text" id="txtVerificationCode" name="txtVerificationCode" class="form-control" placeholder="Verification Code">
+			<span class="text-danger">${requestScope.VERIFICATION_ERROR}</span>
 			<button class="btn btn-primary btn-block mt-2" id="btnVerify" type="button">Verify</button>
 			<a href="home.jsp" id="cancel_reset"><i class="fas fa-angle-left"></i> Back to Home</a>
 		</form>
