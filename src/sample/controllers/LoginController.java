@@ -20,6 +20,8 @@ public class LoginController extends HttpServlet {
 	private final String CUSTOMER = "home.jsp";
 	private final String ADMIN = "home.jsp";
 	private final String STAFF = "home.jsp";
+	private final String VERIFICATION = "CreateVerificationCodeController";
+	
 	private final String ERROR = "login.jsp";
 
 	public LoginController() {
@@ -55,15 +57,22 @@ public class LoginController extends HttpServlet {
 			AccountBO bo = new AccountBO();
 			AccountDTO dto = bo.checkLogin(email, password);
 			if (dto != null) {
-				if (dto.getRoleID() == 1) {
-					url = ADMIN;
-				} else if (dto.getRoleID() == 2) {
-					url = STAFF;
-				} else if (dto.getRoleID() == 3) {
-					url = CUSTOMER;
-				}
 				HttpSession session = request.getSession();
-				session.setAttribute("USER", dto);
+                if (dto.getStatus().equals("New")) {
+                    dto.setPassword(password);
+                    session.setAttribute("REGISTER_USER", dto);
+                    url = VERIFICATION;
+                } else if (dto.getStatus().equals("Active")) {
+                	if (dto.getRoleID() == 1) {
+    					url = ADMIN;
+    				} else if (dto.getRoleID() == 2) {
+    					url = STAFF;
+    				} else if (dto.getRoleID() == 3) {
+    					url = CUSTOMER;
+    				}
+                    session.setAttribute("USER", dto);
+                }
+				
 				result = true;
 			} else {
 				request.setAttribute("LOGINERROR", "Incorrect Email or Password!");

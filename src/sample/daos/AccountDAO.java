@@ -36,20 +36,22 @@ public class AccountDAO {
 		try {
 			conn = DBUtils.getConnection();
 			if (conn != null) {
-				String sql = "SELECT a.Fullname, r.Description as RoleDescription " + "FROM Accounts a, Account_Roles r "
-						+ "WHERE Email = ? AND Password = ? " + "AND a.RoleID = r.ID AND a.Status = ?";
+				String sql = "SELECT a.Fullname, r.Description AS RoleDescription, a.Status AS Status " 
+						+ "FROM Accounts a, Account_Roles r "
+						+ "WHERE Email = ? AND Password = ? AND a.RoleID = r.ID";
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, email);
 				String encryptedPassword = Utils.encriptPasswordBySHA256(password);
 				ps.setString(2, encryptedPassword);
-				ps.setString(3, "Active");
 				rs = ps.executeQuery();
 				if (rs.next()) {
 					String fullname = rs.getString("Fullname");
 					String role = rs.getString("RoleDescription");
+					String status = rs.getString("Status");
 					result = new AccountDTO();
 					result.setEmail(email);
 					result.setFullname(fullname);
+					result.setStatus(status);
 					int roleID = 0;
 					if (role.equals("Admin")) {
 						roleID = 1;
