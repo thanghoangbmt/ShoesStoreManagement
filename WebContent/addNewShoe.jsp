@@ -17,12 +17,13 @@
             <div class="heading-text py-3">
                 <h2 class="text-center">Add New Shoes</h2>
             </div>
-            <form action="" onsubmit="return validate()">
+            <form action="MainController" enctype="multipart/form-data" onsubmit="return validate()">
+            	<input type="hidden" name="action" value="addNewShoe">
                 <div class="row row-content">
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4>Shoes Name</h4>
-                            <input type="text" class="form-control" placeholder="Shoes Name" id="shoeNameId">
+                            <input type="text" class="form-control" placeholder="Shoes Name" id="shoeNameId" name="shoeName">
                             <p class="message" id="messageErrorShoeName" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
@@ -30,7 +31,7 @@
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4 class="pl-md-5">Shoes Branch</h4>
-                            <input type="text" class="form-control" placeholder="Shoes Branch" id="shoeBranchId">
+                            <input type="text" class="form-control" placeholder="Shoes Branch" id="shoeBranchId" name="shoeBranch">
                             <p id="messageErrorShoeBranch" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
@@ -39,64 +40,64 @@
                         <div class="col-custom">
                             <h4>Description Shoes</h4>
                             <input type="text" class="form-control" placeholder="Description Shoes"
-                                id="descriptionShoeId">
+                                id="descriptionShoeId" name="shoeDescription">
                             <p id="messageErrorDescriptionShoe" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4>Sale Price</h4>
-                            <input type="text" class="form-control" placeholder="Sale Price" id="salePriceId">
+                            <input type="text" class="form-control" placeholder="Sale Price" id="salePriceId" name="salePrice">
                             <p id="messageErrorSalePrice" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4 class="pl-md-5">Buy Price</h4>
-                            <input type="text" class="form-control" placeholder="Buy Price" id="buyPriceId">
+                            <input type="text" class="form-control" placeholder="Buy Price" id="buyPriceId" name="buyPrice">
                             <p id="messageErrorBuyPrice" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4>Color</h4>
-                            <input type="text" class="form-control" placeholder="Color" id="colorId">
+                            <input type="text" class="form-control" placeholder="Color" id="colorId" name="color">
                             <p id="messageErrorColor" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4 class="pl-md-5">Image</h4>
-                            <input type="file" id="imageId">
+                            <input type="file" id="imageId" name="image" multiple="multiple">
                             <p id="messageErrorImage" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4>Description style</h4>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>High Top</option>
-                                <option>Low Top</option>
-                                <option>Slip-on</option>
+                            <select class="form-control" id="exampleFormControlSelect1" name="descriptionStyle">
+                                <option value="highTop">High Top</option>
+                                <option value="lowTop">Low Top</option>
+                                <option value="slipOn">Slip-on</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4 class="pl-md-5">Size</h4>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>35</option>
-                                <option>36</option>
-                                <option>37</option>
-                                <option>38</option>
-                                <option>39</option>
-                                <option>40</option>
-                                <option>41</option>
-                                <option>42</option>
-                                <option>43</option>
-                                <option>44</option>
-                                <option>45</option>
-                                <option>46</option>
+                            <select class="form-control" id="exampleFormControlSelect1" name="size">
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
                             </select>
                         </div>
                     </div>
@@ -104,7 +105,7 @@
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4>Quantity</h4>
-                            <input type="number" class="form-control" placeholder="Number" min="1" id="quantityId">
+                            <input type="number" class="form-control" placeholder="Number" min="1" id="quantityId" name="quantity">
                             <p id="messageErrorQuantity" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>
