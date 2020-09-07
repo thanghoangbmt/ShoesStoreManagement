@@ -11,7 +11,7 @@ public class AccountDTO {
 	private int roleID;
 	private String status;
 	private Blob image;
-
+	
 	public AccountDTO() {
 		super();
 	}

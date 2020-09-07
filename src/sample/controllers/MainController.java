@@ -17,7 +17,7 @@ private final String LOGIN_CONTROLLER = "LoginController";
 private final String LOGOUT = "LogoutController";
 private final String REGISTER_CONTROLLER = "RegisterController";
 private final String VERIFICATION = "VerificationController";
-	
+private final String ADDNEWSHOE = "AddNewShoeController";
 	private final String ERROR = "login.jsp";
 	
 	public MainController() {
@@ -47,7 +47,10 @@ private final String VERIFICATION = "VerificationController";
 				url = REGISTER_CONTROLLER;
 			} else if (action.equals("Verify")) {
 				url = VERIFICATION;
+			} else if (action.equals("addNewShoe")) {
+				url = ADDNEWSHOE;
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
