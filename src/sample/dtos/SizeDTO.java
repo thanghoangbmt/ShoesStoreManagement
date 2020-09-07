@@ -1,6 +1,6 @@
 package sample.dtos;
 
-public class Size {
+public class SizeDTO {
 	private int id;
 	private int size;
 	public int getId() {
@@ -15,12 +15,12 @@ public class Size {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	public Size(int id, int size) {
+	public SizeDTO(int id, int size) {
 		super();
 		this.id = id;
 		this.size = size;
 	}
-	public Size() {
+	public SizeDTO() {
 		super();
 	}
 	

@@ -1,5 +1,6 @@
 package sample.daos;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,139 +30,92 @@ public class ShoeDAO {
 		}
 	}
 
-	public boolean addNewShoe(String nameShoe, String shoeBranch, String shoeDescription, float salePrice,
-			float buyPrice, String color, Part image, int size, String descriptionStyle, int quantity, String gender)
-			throws SQLException, ClassNotFoundException {
+	public boolean addNewShoe(String nameShoe, String shoeBranch, String shoeDescription, double salePrice,
+			double buyPrice, String color, Part image, int size, String descriptionStyle, int quantity, String gender)
+			throws SQLException, ClassNotFoundException, IOException {
 		boolean result = false;
 		try {
-			conn = DBUtils.getConnection();
-			if (conn != null) {
-				// get StyleID
-				int styleID = 0;
-				String sqlGetStyleId1 = "select * from Style where Description = ?";
-				ps = conn.prepareStatement(sqlGetStyleId1);
-				ps.setString(1, descriptionStyle);
-				rs = ps.executeQuery();
-				if (rs.next()) {
-					styleID = rs.getInt("ID");
-				} else {
-					String sqlGetStyleId2 = "Insert into Style(Description) values (?)";
-					ps = conn.prepareStatement(sqlGetStyleId2, Statement.RETURN_GENERATED_KEYS);
-					ps.setString(1, descriptionStyle);
-					ps.execute();
-					rs = ps.getGeneratedKeys();
-					if (rs.next()) {
-						styleID = rs.getInt("ID");
-					}
-				}
+			// get StyleID
 
-				// get BranchID
-				int brandId = 0;
-				String sqlGetBranchId1 = "select * from Brands where Name = ?";
-				ps = conn.prepareStatement(sqlGetBranchId1);
-				ps.setString(1, shoeBranch);
-				rs = ps.executeQuery();
-				if (rs.next()) {
-					brandId = rs.getInt("ID");
-				} else {
-					String sqlGetBranchId2 = "Insert into Brands(Name) values (?)";
-					ps = conn.prepareStatement(sqlGetBranchId2, Statement.RETURN_GENERATED_KEYS);
-					ps.setString(1, shoeBranch);
-					ps.execute();
-					rs = ps.getGeneratedKeys();
-					if (rs.next()) {
-						brandId = rs.getInt("ID");
-					}
-				}
+			StyleDAO styleDAO = new StyleDAO();
+			int styleId = styleDAO.getStyleId(descriptionStyle);
+			// get BranchID
 
-				// get ColorID
-				int colorID = 0;
-				String sqlGetColorId1 = "select * from Colors where Color = ?";
-				ps = conn.prepareStatement(sqlGetColorId1);
-				ps.setString(1, color);
-				rs = ps.executeQuery();
-				if (rs.next()) {
-					colorID = rs.getInt("ID");
-				} else {
-					String sqlGetColorId2 = "Insert into Colors(Color) values (?)";
-					ps = conn.prepareStatement(sqlGetColorId2, Statement.RETURN_GENERATED_KEYS);
-					ps.setString(1, color);
-					ps.execute();
-					rs = ps.getGeneratedKeys();
-					if (rs.next()) {
-						colorID = rs.getInt("ID");
-					}
-				}
+			BrandsDAO brandsDAO = new BrandsDAO();
+			int brandsId = brandsDAO.getBrandsId(shoeBranch);
 
-				// get sizeID
-				int sizeId = 0;
-				String sqlGetSizeId1 = "select * from Size where Size = ?";
-				ps = conn.prepareStatement(sqlGetSizeId1);
-				ps.setInt(1, size);
-				rs = ps.executeQuery();
-				if (rs.next()) {
-					sizeId = rs.getInt("ID");
-				} else {
-					String sqlGetSizeId2 = "Insert into Size(Size) values (?)";
-					ps = conn.prepareStatement(sqlGetSizeId2, Statement.RETURN_GENERATED_KEYS);
-					ps.setInt(1, size);
-					ps.execute();
-					rs = ps.getGeneratedKeys();
-					if (rs.next()) {
-						sizeId = rs.getInt("ID");
-					}
-				}
+			// get ColorID
+			ColorDAO colorDAO = new ColorDAO();
+			int colorId = colorDAO.getColorId(color);
+			// get sizeID
+			SizeDAO sizeDAO = new SizeDAO();
+			int sizeId = sizeDAO.getSizeId(size);
+			// get ShoesID
+			ShoeDAO shoeDAO = new ShoeDAO();
+			int shoeId = shoeDAO.getShoeId(nameShoe, shoeDescription, salePrice, gender, brandsId, styleId);
 
-				// get ShoesID
-				int shoesID = 0;
-				String sqlGetShoesId1 = "select * from Shoes where "
-						+ "Name = ?, Description = ?, SalePrice = ?, Sex = ?, " + "Status = ?,BrandID = ?, StyleID = ?";
-				ps = conn.prepareStatement(sqlGetShoesId1);
-				ps.setNString(1, nameShoe);
-				ps.setNString(2, shoeDescription);
-				ps.setFloat(3, salePrice);
-				ps.setString(4, gender);
-				ps.setString(5, "Enable");
-				ps.setInt(6, brandId);
-				ps.setInt(7, styleID);
-				rs = ps.executeQuery();
-				if (rs.next()) {
-					shoesID = rs.getInt("ID");
-				} else {
-					String sqlGetShoesId2 = "Insert into Shoes(Name,Description,SalePrice,Sex,Status,BranchID, StyleID) values (?,?,?,?,?,?,?)";
-					ps = conn.prepareStatement(sqlGetShoesId2, Statement.RETURN_GENERATED_KEYS);
-					ps.setNString(1, nameShoe);
-					ps.setNString(2, shoeDescription);
-					ps.setFloat(3, salePrice);
-					ps.setString(4, gender);
-					ps.setString(5, "Enable");
-					ps.setInt(6, brandId);
-					ps.setInt(7, styleID);
-					ps.execute();
-					rs = ps.getGeneratedKeys();
-					if (rs.next()) {
-						shoesID = rs.getInt("ID");
-					}
-				}
+			ShoeDetailsDAO shoeDetailsDAO = new ShoeDetailsDAO();
+			int shoeDetailsId = shoeDetailsDAO.getShoeDetailsId(shoeId, sizeId, colorId, quantity);
 
-				// Insert table Shoe_Details
-				String sqlInsertShoeDetails = "Insert into Shoe_Details (ShoeID, SizeID, ColorID, Quantity) values(?,?,?,?)";
-				ps = conn.prepareStatement(sqlInsertShoeDetails);
-				ps.setInt(1, shoesID);
-				ps.setInt(2, sizeId);
-				ps.setInt(3, colorID);
-				ps.setInt(4, quantity);
-				result = (ps.executeUpdate() > 0);
-				
-				//Insert table Import_Invoices
-				//String sqlImportInvoices = "Insert into Import_Invoices (ShoeID,BuyPrice,Quantity,DateOfPur)"; 
-				
-				
+			ShoeImagesDAO shoeImagesDAO = new ShoeImagesDAO();
+			boolean checkInsertShoeImage = shoeImagesDAO.addShoeImages(shoeDetailsId, image);
+
+			ImportInvoicesDAO importInvoicesDAO = new ImportInvoicesDAO();
+			boolean checkInsertImportInvoice = importInvoicesDAO.addImportInvoice(buyPrice, quantity, shoeDetailsId);
+
+			if (styleId != 0 || brandsId != 0 || colorId != 0 || sizeId != 0 || shoeId != 0 || shoeDetailsId != 0
+					|| checkInsertImportInvoice == false || checkInsertShoeImage == false) {
+				result = false;
+			}
+			else {
+				result = true;
 			}
 		} finally {
 			closeConnection();
 		}
 		return result;
+	}
+
+	public int getShoeId(String nameShoe, String shoeDescription, double salePrice, String gender, int brandsId,
+			int styleId) throws ClassNotFoundException, SQLException {
+		int shoesID = 0;
+		try {
+			conn = DBUtils.getConnection();
+			if (conn != null) {
+
+				String sqlGetShoesId1 = "select * from Shoes where "
+						+ "Name = ? and Description = ? and SalePrice = ? and Sex = ? and BrandID = ? and StyleID = ?";
+				ps = conn.prepareStatement(sqlGetShoesId1);
+				ps.setNString(1, nameShoe);
+				ps.setNString(2, shoeDescription);
+				ps.setDouble(3, salePrice);
+				ps.setString(4, gender);
+				ps.setInt(5, brandsId);
+				ps.setInt(6, styleId);
+				rs = ps.executeQuery();
+				if (rs.next()) {
+					shoesID = rs.getInt(1);
+				} else {
+					String sqlGetShoesId2 = "Insert into Shoes(Name,Description,SalePrice,Sex,BrandID, StyleID) values (?,?,?,?,?,?)";
+					ps = conn.prepareStatement(sqlGetShoesId2, Statement.RETURN_GENERATED_KEYS);
+					ps.setNString(1, nameShoe);
+					ps.setNString(2, shoeDescription);
+					ps.setDouble(3, salePrice);
+					ps.setString(4, gender);
+					ps.setInt(5, brandsId);
+					ps.setInt(6, styleId);
+					ps.execute();
+					rs = ps.getGeneratedKeys();
+					if (rs.next()) {
+						shoesID = rs.getInt(1);
+					}
+				}
+			}
+		} finally {
+			closeConnection();
+		}
+
+		return shoesID;
 	}
 
 }

@@ -1,6 +1,6 @@
 package sample.dtos;
 
-public class ImportInvoices {
+public class ImportInvoicesDTO {
 	private int id;
 	private int saleInvoiceId;
 	private int shoeId;
@@ -50,7 +50,7 @@ public class ImportInvoices {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public ImportInvoices(int id, int saleInvoiceId, int shoeId, int sizeId, int colorId, float salePrice,
+	public ImportInvoicesDTO(int id, int saleInvoiceId, int shoeId, int sizeId, int colorId, float salePrice,
 			int quantity) {
 		super();
 		this.id = id;
@@ -61,7 +61,7 @@ public class ImportInvoices {
 		this.salePrice = salePrice;
 		this.quantity = quantity;
 	}
-	public ImportInvoices() {
+	public ImportInvoicesDTO() {
 		super();
 	}
 	

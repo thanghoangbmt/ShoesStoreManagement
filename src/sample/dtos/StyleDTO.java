@@ -1,6 +1,6 @@
 package sample.dtos;
 
-public class Style {
+public class StyleDTO {
 	private int id;
 	private String description;
 	public int getId() {
@@ -15,12 +15,12 @@ public class Style {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Style(int id, String description) {
+	public StyleDTO(int id, String description) {
 		super();
 		this.id = id;
 		this.description = description;
 	}
-	public Style() {
+	public StyleDTO() {
 		super();
 	}
 	

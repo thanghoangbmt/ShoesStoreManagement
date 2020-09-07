@@ -17,7 +17,7 @@
             <div class="heading-text py-3">
                 <h2 class="text-center">Add New Shoes</h2>
             </div>
-            <form action="MainController" enctype="multipart/form-data" onsubmit="return validate()">
+            <form action="AddNewShoeController" enctype="multipart/form-data" method="post" >
             	<input type="hidden" name="action" value="addNewShoe">
                 <div class="row row-content">
                     <div class="col-12 col-md-6 pb-5">
@@ -47,7 +47,7 @@
                     <div class="col-12 col-md-6 pb-5">
                         <div class="col-custom-left">
                             <h4>Sale Price</h4>
-                            <input type="text" class="form-control" placeholder="Sale Price" id="salePriceId" name="salePrice">
+                            <input type="text" class="form-control" placeholder="Sale Price" id="salePriceId" name="salePrice1">
                             <p id="messageErrorSalePrice" style="color:red; padding-left: 50%;"></p>
                         </div>
                     </div>

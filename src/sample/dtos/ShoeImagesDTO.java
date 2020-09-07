@@ -2,7 +2,7 @@ package sample.dtos;
 
 import java.sql.Blob;
 
-public class ShoeImages {
+public class ShoeImagesDTO {
 	private int id;
 	private int shoeId;
 	private Blob image;
@@ -24,13 +24,13 @@ public class ShoeImages {
 	public void setImage(Blob image) {
 		this.image = image;
 	}
-	public ShoeImages(int id, int shoeId, Blob image) {
+	public ShoeImagesDTO(int id, int shoeId, Blob image) {
 		super();
 		this.id = id;
 		this.shoeId = shoeId;
 		this.image = image;
 	}
-	public ShoeImages() {
+	public ShoeImagesDTO() {
 		super();
 	}
 	
