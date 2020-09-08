@@ -1,6 +1,7 @@
 package sample.dtos;
 
 import java.sql.Blob;
+import java.util.ArrayList;
 
 public class ShoeDetailsDTO extends ShoesDTO {
 
@@ -10,7 +11,7 @@ public class ShoeDetailsDTO extends ShoesDTO {
 	private ColorDTO color;
 	private int quantity;
 	private String status;
-	private Blob[] images;
+	private ArrayList<Blob> images;
 	
 	public int getIdShoeDetails() {
 		return idShoeDetails;
@@ -48,17 +49,12 @@ public class ShoeDetailsDTO extends ShoesDTO {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Blob[] getImages() {
+	public ArrayList<Blob> getImages() {
 		return images;
 	}
-	public void setImages(Blob[] images) {
+	public void setImages(ArrayList<Blob> images) {
 		this.images = images;
 	}
-
-	
-	
-	
-	
 	
 	
 }	
